@@ -63,7 +63,8 @@ export default function HeroBanner() {
         <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
           Comfortable, fully furnished rooms for boys near JECRC University &amp; Sanganer.
           3 meals/day · 24×7 CCTV security · High-speed Wi-Fi — starting at{' '}
-          <span className="text-[#F5C518] font-semibold">₹7,000/month</span>.
+          <span className="text-[#F5C518] font-semibold">₹7,000/month</span>
+          <span className="text-gray-500 text-xs"> (electricity extra @₹11/unit)</span>.
         </p>
 
         {/* CTA Buttons */}

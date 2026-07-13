@@ -109,10 +109,12 @@ function RoomsSection({ rooms }: { rooms: RoomOption[] }) {
                 Available
               </span>
             </div>
-            <div className="flex items-baseline gap-1">
+            <div className="flex items-baseline gap-1 mb-1">
               <span className="text-[#F5C518] font-bold text-2xl">₹{room.pricePerMonth.toLocaleString('en-IN')}</span>
               <span className="text-gray-400 text-xs">/month</span>
             </div>
+            <p className="text-green-400 text-xs font-medium">✓ Includes 3 meals/day</p>
+            <p className="text-gray-500 text-xs mt-0.5">+ Electricity @₹11/unit extra</p>
           </div>
         ))}
       </div>
@@ -122,7 +124,17 @@ function RoomsSection({ rooms }: { rooms: RoomOption[] }) {
   return (
     <section className="space-y-6">
       <SectionHeading icon="🛏️" title="Room Types & Pricing" />
-      <p className="text-xs text-gray-500 -mt-4">*Starting rates. Final price may vary by room selection.</p>
+      <div className="rounded-xl border border-[#F5C518]/30 bg-[#F5C518]/5 p-4 flex gap-3">
+        <span className="text-xl shrink-0">ℹ️</span>
+        <div>
+          <p className="text-white font-semibold text-sm mb-1">What&apos;s included in rent?</p>
+          <p className="text-gray-300 text-xs leading-relaxed">
+            Room rent <strong className="text-white">includes 3 meals/day</strong> (breakfast, lunch &amp; dinner).
+            {' '}<span className="text-[#F5C518] font-semibold">Electricity bill is charged separately</span> — ₹11 per unit, billed monthly based on actual consumption.
+          </p>
+        </div>
+      </div>
+      <p className="text-xs text-gray-500">*Starting rates. Final price may vary by room selection.</p>
       {doubles.length > 0 && <RoomGroup title="2-Seater (Double Occupancy)" icon="👥" items={doubles} />}
       {triples.length > 0 && <RoomGroup title="3-Seater (Triple Occupancy)" icon="👥" items={triples} />}
     </section>

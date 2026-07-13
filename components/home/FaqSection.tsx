@@ -45,7 +45,11 @@ const FAQS = [
   },
   {
     q: 'What is the monthly rent?',
-    a: 'Starting from ₹7,000/month for triple non-AC rooms. Double AC rooms go up to ₹9,000/month. All prices include 3 meals/day, Wi-Fi, and all amenities.',
+    a: 'Starting from ₹7,000/month for triple non-AC rooms. Double AC rooms go up to ₹9,000/month. All prices include 3 meals/day (breakfast, lunch & dinner), Wi-Fi, and all amenities. Note: Electricity bill is charged separately at ₹11 per unit, billed monthly based on actual meter reading.',
+  },
+  {
+    q: 'Is electricity bill included in rent?',
+    a: 'No — electricity is charged separately at ₹11 per unit. Your monthly rent covers room + 3 meals/day + Wi-Fi + all amenities. At the end of each month, electricity usage is measured from your room meter and billed accordingly.',
   },
 ];
 

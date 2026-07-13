@@ -115,6 +115,7 @@ export default function PgImageCard({
               ₹{startingPrice.toLocaleString('en-IN')}
             </span>
             <span className="text-gray-400 text-xs ml-1">/month</span>
+            <p className="text-gray-500 text-[10px] mt-0.5">incl. 3 meals · electricity extra</p>
           </div>
           {isActive && (
             <span className="inline-flex items-center gap-1 text-[#F5C518] text-xs font-semibold bg-[#F5C518]/10 px-3 py-1.5 rounded-lg group-hover:bg-[#F5C518]/20 transition-colors">
