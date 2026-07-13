@@ -6,7 +6,7 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 process.env.ADMIN_USERNAME = process.env.ADMIN_USERNAME || "iamSatu";
 process.env.ADMIN_PASSWORD_HASH =
   process.env.ADMIN_PASSWORD_HASH ||
-  "$2b$12$oZHUoHx4dr9dlU1hCNv9uOeusthGhZWktHCgBRWFpOlblMmUfWXjq";
+  "$2b$12$4XlmKeX28b2jY8eudDrcie/syXzomH9yY6QxykhT825kkySe64SyG";
 
 import type { NextConfig } from "next";
 
