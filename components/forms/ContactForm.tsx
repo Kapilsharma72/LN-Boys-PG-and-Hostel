@@ -183,6 +183,11 @@ export default function ContactForm({ activeBranches }: ContactFormProps) {
       if (res.ok && json.success) {
         // Show success banner; do NOT reset fields (requirement 6.3)
         setFormStatus('success');
+
+        // Also open WhatsApp with pre-filled message
+        const branchName = activeBranches.find(b => b.branchId === data.branchId)?.name ?? 'LN Boys PG';
+        const msg = `Hi LN Boys PG! 👋\n\nMera naam *${data.name}* hai.\nMobile: *${data.mobile}*\nBranch: *${branchName}*${data.message ? `\nMessage: ${data.message}` : ''}\n\nMujhe aapke PG ke baare mein jaankari chahiye.`;
+        window.open(`https://wa.me/918385857902?text=${encodeURIComponent(msg)}`, '_blank');
         return;
       }
 
@@ -234,7 +239,7 @@ export default function ContactForm({ activeBranches }: ContactFormProps) {
           aria-live="polite"
           className="p-4 rounded-lg bg-green-900/40 border border-green-700 text-green-300 text-sm"
         >
-          ✓ Thank you! We received your message and will contact you shortly.
+          ✓ Message received! WhatsApp window bhi open hui hai — wahan bhi baat kar sakte hain.
         </div>
       )}
 

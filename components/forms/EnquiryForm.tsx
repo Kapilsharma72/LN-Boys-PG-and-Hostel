@@ -231,6 +231,14 @@ export default function EnquiryForm({ branchId }: EnquiryFormProps) {
       if (res.ok && json.success) {
         setFormStatus('success');
         reset(); // reset to defaults on success (requirement 9.3)
+
+        // Open WhatsApp with pre-filled message
+        const dateStr = intent === 'visit' && (data as VisitFormValues).preferredDate
+          ? `\nPreferred Visit Date: *${(data as VisitFormValues).preferredDate}*`
+          : '';
+        const intentLabel = intent === 'visit' ? 'Schedule a Visit' : 'Reserve a Room';
+        const msg = `Hi LN Boys PG! 👋\n\nMera naam *${data.name}* hai.\nMobile: *${data.mobile}*\nIntent: *${intentLabel}*${dateStr}\nBranch ID: *${branchId}*\n\nPlease confirm my enquiry.`;
+        window.open(`https://wa.me/918385857902?text=${encodeURIComponent(msg)}`, '_blank');
         return;
       }
 
@@ -315,7 +323,7 @@ export default function EnquiryForm({ branchId }: EnquiryFormProps) {
           aria-live="polite"
           className="p-4 rounded-lg bg-green-900/40 border border-green-700 text-green-300 text-sm"
         >
-          Your enquiry has been received! Our team will contact you within 2 hours.
+          ✅ Enquiry received! WhatsApp window bhi open hui hai — wahan confirm kar sakte hain.
         </div>
       )}
 
